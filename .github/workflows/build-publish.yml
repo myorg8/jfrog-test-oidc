@@ -1,4 +1,4 @@
-name: "JFrog-GitHub NPM Publish OIDC Integration"
+name: "JFrog-GitHub Docker Publish OIDC Integration"
 on: push
 
 # This is required as person1234567890
