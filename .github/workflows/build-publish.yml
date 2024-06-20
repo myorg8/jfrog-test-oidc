@@ -15,4 +15,17 @@ jobs:
       credentials:
         username: ${{ secrets.JFROG_USER }}
         password: ${{ secrets.JFROG_ACCESS_TOKEN }}
+        
+     steps:
+       - name: Logs
+         run: |
+          printenv
 
+       - name: Setup JFrog CLI
+         uses: jfrog/setup-jfrog-cli@v4
+         env:  
+           JF_URL: ${{ secrets.JF_URL }}
+         with:
+           oidc-provider-name: san-git-intergation
+           oidc-audience: jfrog-github
+           
