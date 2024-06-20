@@ -9,7 +9,7 @@ permissions:
 
 jobs:
   build:
-     runs-on: [self-hosted, k8s-app-deploy]
+     runs-on: self-hosted
      container:
       image: incloudmaster.jfrog.io/docker-remote/node:lts-alpine
       credentials:
@@ -20,12 +20,4 @@ jobs:
        - name: Logs
          run: |
           printenv
-
-       - name: Setup JFrog CLI
-         uses: jfrog/setup-jfrog-cli@v4
-         env:  
-           JF_URL: ${{ secrets.JF_URL }}
-         with:
-           oidc-provider-name: san-git-intergation
-           oidc-audience: jfrog-github
            
