@@ -9,9 +9,8 @@ permissions:
 
 jobs:
   build:
-     runs-on: ubuntu-latest
+     runs-on: [self-hosted, k8s-app-deploy]
      container:
-
       image: incloudmaster.jfrog.io/docker-remote/node:lts-alpine
       credentials:
         username: ${{ secrets.JFROG_USER }}
